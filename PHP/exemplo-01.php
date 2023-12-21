@@ -36,6 +36,8 @@ echo "<hr>";
 * );
 * # FAZENDO UM SELECT NA TABELA tb_usuarios
 * SELECT * FROM tb_usuarios ORDER BY idusuarios
-* 
+*  
+*
+*
  */
 ?>
