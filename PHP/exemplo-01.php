@@ -38,6 +38,4 @@ echo "<hr>";
 * SELECT * FROM tb_usuarios ORDER BY idusuarios
 * 
  */
-
- 
 ?>
