@@ -33,6 +33,6 @@ echo "<hr>";
 * deslogin VARCHAR(45) NOT NULL,
 * dessenha VARCHAR(255) NOT NULL,
 * dtcadastro  CURRENT_TIMESTAMP()
-);
+* );
  */
 ?>
