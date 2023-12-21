@@ -25,8 +25,4 @@ $stmt->execute();
 echo ucwords("Inserido  com Sucesso");
 echo "<hr>";
 
-
-
-
-
 ?>
