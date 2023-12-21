@@ -21,7 +21,6 @@ $stmt->bindParam(":ID", $login);
 $stmt->bindParam(":SENHA", $senha);
 $stmt->bindParam("ID",$id);
 $stmt->execute();
-
 echo ucwords("Inserido  com Sucesso");
 echo "<hr>";
 
