@@ -24,4 +24,8 @@ $stmt->execute();
 echo ucwords("Inserido  com Sucesso");
 echo "<hr>";
 
+// Estrutura do banco de Dados:
+/** @param SQL:
+ * 
+ */
 ?>
