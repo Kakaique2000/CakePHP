@@ -30,7 +30,7 @@ echo "<hr>";
  * USE dbphp7;
  * CREATE TABLE tb_usuarios(
 * id INT(1)NOT NULL PRIMARY KEY AUTO_INCREMENT,
-deslogin VARCHAR(45) NOT NULL,
+* deslogin VARCHAR(45) NOT NULL,
 dessenha VARCHAR(255) NOT NULL,
 dtcadastro  CURRENT_TIMESTAMP()
 );
