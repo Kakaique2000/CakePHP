@@ -26,6 +26,8 @@ echo "<hr>";
 
 // Estrutura do banco de Dados:
 /** @param SQL:
+ * CREATE DATABASE dbphp7;
+ * USE dbphp7;
  * 
  */
 ?>
