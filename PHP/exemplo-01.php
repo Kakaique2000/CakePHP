@@ -34,5 +34,6 @@ echo "<hr>";
 * dessenha VARCHAR(255) NOT NULL,
 * dtcadastro  CURRENT_TIMESTAMP()
 * );
+* # FAZENDO UM SELECT NA TABELA tb_usuarios;
  */
 ?>
