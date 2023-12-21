@@ -12,7 +12,7 @@ $stmt = $conn->prepare("INSERT INTO (deslogin, dessenha) VALUES (:ID , :SENHA)")
 // $conn->query("SELECT * FROM tb_usuarios GROUP BY idusuarios");
 // $stmt = $conn->prepare("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID");
 // $stmt = $conn->prepare("DELETE FROM tb_usuarios WHERE idusuario = :ID");
-// $stmt;
+// $stmt
 
 $login = "user";
 $senha = "1234566";
