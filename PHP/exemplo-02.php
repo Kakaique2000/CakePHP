@@ -21,12 +21,13 @@ cnpj_ie INT(35) NOT NULL,
 razão_social VARCHAR(50)
 );
 
-SELECT * FROM estoque;
-INSERT INTO estoque (marca, fornecedor) VALUES ('Parmalat','Usina de Laticinios');
-UPDATE estoque SET dessenha = '123456' WHERE idusuario = 1;
+SELECT * FROM estoque ORDER BY id_prod;
+INSERT INTO estoque (marca, fornecedor) VALUES ('Parmalat','Usina de Laticinios Ltda');
+UPDATE estoque SET marca = 'Piracanjuba' WHERE id_prod = 2;
 ALTER TABLE estoque ADD lucro_liquido_R$ FLOAT(10);
 TRUNCATE TABLE estoque;
 DROP DATABASE db_market;
+
 */
 /** @param Exemplo-02 em PHP: */
 $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
@@ -34,6 +35,7 @@ if(isset($conn)):
     echo ucwords("<center><b> Conectado com sucesso ao Banco </b></center>");
 endif;
 $stmt = $conn->prepare("INSERT INTO estoque () VALUES ()");
+
 
 
 
