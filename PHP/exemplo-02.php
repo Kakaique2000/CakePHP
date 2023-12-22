@@ -29,8 +29,6 @@ DELETE FROM estoque WHERE id_prod = 2;
 TRUNCATE TABLE estoque;
 DROP DATABASE db_market;
 
-
-
 */
 /** @param Exemplo-02 em PHP: */
 $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
