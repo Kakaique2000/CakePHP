@@ -32,7 +32,7 @@ echo "<hr>";
 * id INT(1)NOT NULL PRIMARY KEY AUTO_INCREMENT,
 * deslogin VARCHAR(45) NOT NULL,
 * dessenha VARCHAR(255) NOT NULL,
-* dtcadastro  CURRENT_TIMESTAMP()
+* dtcadastro  CURRENT_TIMESTAMP();
 * );
 * # FAZENDO UM SELECT NA TABELA tb_usuarios
 * SELECT * FROM tb_usuarios ORDER BY idusuarios
