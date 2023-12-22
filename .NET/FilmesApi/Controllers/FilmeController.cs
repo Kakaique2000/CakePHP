@@ -41,7 +41,7 @@ public class FilmeController : ControllerBase
     /* Vamos criar um metodo aqui abaixo de Leitura */
     [HttpGet] // 
     public IEnumerable<Filme> RecuperaFilmes(int skip = 0,
-        [FromQuery] int take)
+        [FromQuery] int take = 50)
     /* Fazendo desta forma com IEnumerable<Filmes> garantimos que se a lista de filmes.
      * venha a mudar a sua implementação, a gente não vai precisar trocar o cabeçalho do metodo.
      * */
