@@ -15,7 +15,6 @@ public class FilmeController : ControllerBase
 
     // Podemos criar um campo abaixo chamado ID. do nosso controlador;
     // No momento que vamos inserir algum filme neste sistema será ID ++ incrementando
-    
 
     private static int id = 0;
 
@@ -41,13 +40,14 @@ public class FilmeController : ControllerBase
 
     /* Vamos criar um metodo aqui abaixo de Leitura */
     [HttpGet] // 
-    public IEnumerable<Filme> RecuperaFilmes(int skip, int take)
-    /* Fazendo desta forma com IEnumerable<Filmes> garantimos que se a lista de filmes
+    public IEnumerable<Filme> RecuperaFilmes(int skip = 0,
+        [FromQuery] int take)
+    /* Fazendo desta forma com IEnumerable<Filmes> garantimos que se a lista de filmes.
      * venha a mudar a sua implementação, a gente não vai precisar trocar o cabeçalho do metodo.
      * */
-    {
-        return filmes.Skip(skip).take(take);
         
+    {
+        return filmes.Skip(skip).Take(take);         
 
     }
 
@@ -73,29 +73,17 @@ public class FilmeController : ControllerBase
      *     "Id":       99
      *     "Titulo": "Planeta dos Macacos"
      *     "Genero": "Ação/Aventura"
-     *     "Duracao": 290;
+     *     "Duracao": 290
      *   }
      *   
      *   {
      *     "Id":       100
-     *     "Titulo": "Barbie o Filme"
+     *     "Titulo": "Barvie o Filme"
      *     "Genero": "Aventura/Fantasia"
-     *     "Duracao": 200;
-                        
+     *     "Duracao": 200
      *   }
      *   
-     // Nota Importante aqui:
-      Carrego a Lista inteira de Filmes, podemos não ter memoria sufuciente.
-      Tenho que Aumentar meus custos de memoria na Maquina da AWS.
-      Podemos trabalhar com o conceito de Paginação, que significa que podemos pegar
-      pedaços ou trechos da minha lista de filmes.
-
-     -> Podemos utilizar 02 Metodos interresantes chamados Skip (Quantos elementos da sua lista quer pular);
-     e o take (Quanto queremos pegar);
-
-     ->     
-
-
+     *   
      *  */
 
     }
