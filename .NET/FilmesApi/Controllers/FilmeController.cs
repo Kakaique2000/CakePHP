@@ -65,7 +65,7 @@ public class FilmeController : ControllerBase
          * A interogação (significa que pode ser Nulo ou Não, 
          */
         return filmes.FirstOrDefault(filme => filme.Id == id);
-        // O filme que foi recuperado desta consulta, se ele for nulo significa
+        // O filme que foi recuperado desta consulta, se ele for nulo significa que ele não encontrou
 
         }
 
