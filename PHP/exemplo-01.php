@@ -12,5 +12,11 @@ $login = 'josé';
 $senha = '123456789';
 
 # vamos fazer um bindParam para cada um das variaveis;
+$stmt->bindParam(":LOGIN",$login);
+$stmt->bindPàram(":PASSWORD",$senha);
+
+$stmt->execute();
+
+echo "Inserido OK!";
 
 ?>
