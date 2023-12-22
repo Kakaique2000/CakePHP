@@ -1,12 +1,11 @@
 <?php
 
 $conn = new PDO("mysql:local=localhost;dbname=dbphp7","root","");
-if($conn === mysql_connect_error() && mysql_connect_ernno()):
-    return "Não foi possivel conectar";
+if(isset($conn)):
+    echo ucwords("<center> Conectado com sucesso!</center>");
+
 endif;
 
-    /*if(isset($conn)):
-        echo ucwords("Conectado com sucesso!");
-       
-    endif;*/
+
+
 ?>
