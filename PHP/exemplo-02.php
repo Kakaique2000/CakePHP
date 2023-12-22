@@ -20,6 +20,13 @@ supervisor VARCHAR (30),
 cnpj_ie INT(35) NOT NULL,
 razão_social VARCHAR(50)
 );
+
+SELECT * FROM estoque;
+INSERT INTO estoque (marca, fornecedor) VALUES ('Parmalat','Usina de Laticinios');
+UPDATE estoque SET dessenha = '123456' WHERE idusuario = 1;
+ALTER TABLE estoque ADD lucro_liquido_R$ FLOAT(10);
+TRUNCATE TABLE estoque;
+DROP DATABASE db_market;
 */
 /** @param Exemplo-02 em PHP: */
 $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
