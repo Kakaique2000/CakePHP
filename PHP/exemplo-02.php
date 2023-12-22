@@ -22,11 +22,14 @@ razão_social VARCHAR(50)
 );
 
 SELECT * FROM estoque ORDER BY id_prod;
-INSERT INTO estoque (marca, fornecedor) VALUES ('Parmalat','Usina de Laticinios Ltda');
+INSERT INTO estoque (data_vencto, marca, fornecedor, vlr_compra_R$, vlr_venda_R$, N°_NF, lucro_sobre_prod, responsavél, supervisor, cnpj_ie, razão_social)VALUES(01012024, 'Parmalat','Usina de Laticinios Ltda', 50.00, 80.00, 002748, 30.00, 'Andre','Erica', 6945789000140, 'Sacolão da Saude Ltda');
 UPDATE estoque SET marca = 'Piracanjuba' WHERE id_prod = 2;
 ALTER TABLE estoque ADD lucro_liquido_R$ FLOAT(10);
+DELETE FROM estoque WHERE id_prod = 2;
 TRUNCATE TABLE estoque;
 DROP DATABASE db_market;
+
+
 
 */
 /** @param Exemplo-02 em PHP: */
@@ -34,7 +37,8 @@ $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
 if(isset($conn)):
     echo ucwords("<center><b> Conectado com sucesso ao Banco </b></center>");
 endif;
-$stmt = $conn->prepare("INSERT INTO estoque () VALUES ()");
+$stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
+
 
 
 
