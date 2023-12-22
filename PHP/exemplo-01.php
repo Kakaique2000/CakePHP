@@ -6,6 +6,11 @@ if(isset($conn)):
 
 endif;
 
+$stmt = $conn->prepare("INSERT INTO tb_usuarios (deslogin, dessenha) VALUES (:LOGIN, :PASSWORD)");
 
+$login = 'josé';
+$senha = '123456789';
+
+# vamos fazer um bindParam para cada um das variaveis;
 
 ?>
