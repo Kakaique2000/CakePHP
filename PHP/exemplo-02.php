@@ -46,6 +46,8 @@ try{
     echo 'Exceção Capturada', $e->getMessage() . $e->getLine(), "\n";
     
     
+
+
     
 }
 
