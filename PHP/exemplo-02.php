@@ -45,6 +45,7 @@ try{
 }catch (Exception $e){
     echo 'Exceção Capturada', $e->getMessage() . $e->getLine(), "\n";
     
+    
 }
 
 
