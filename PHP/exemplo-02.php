@@ -37,7 +37,8 @@ if($conn == mysqli_connect_error() && mysqli_connect_ernno()):
     return ucwords("Não foi Possivél conectar a base de Dados!") . mysql_connect_error();
 else:
     echo "Conectado com sucesso!";
-
+    
+endif;
 
 # $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
 
