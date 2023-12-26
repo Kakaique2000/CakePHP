@@ -48,7 +48,6 @@ try{
     
 }
 
-
 # $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
 
 
