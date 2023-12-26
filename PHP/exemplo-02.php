@@ -36,6 +36,7 @@ $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
 if($conn == mysql_connect_error()):
     return "Do not connect a Database " . mysql_connect_error();
 endif;
+
 # $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
 
 
