@@ -45,9 +45,7 @@ try{
 
 }catch (Exception $e){
     echo 'Exceção Capturada que mostra a linha e o Erro!', $e->getMessage() . $e->getLine(), "\n";
-    
-    
-}
+    } 
 
 # $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
 
