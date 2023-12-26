@@ -21,7 +21,7 @@ $stmt->bindParam(":ID",$id);
 # mantemos $stmt->bindParam(":ID", $id);
 $stmt->execute();
 
-echo "Inserido OK!";
+echo "Inserido OK!!";
 // echo "Atualizado com sucesso!";
 // echo "Deletado com sucesso";
 //
