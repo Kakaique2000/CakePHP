@@ -34,7 +34,7 @@ DROP DATABASE db_market;
 /** @param Exemplo-02 em PHP: */
 $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
 if($conn == mysqli_connect_error() && mysqli_connect_ernno()):
-    return ucwords("Não foi Possivél ") . mysql_connect_error();
+    return ucwords("Não foi Possivél conectar a base de Dados!") . mysql_connect_error();
 ;
 
 # $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
