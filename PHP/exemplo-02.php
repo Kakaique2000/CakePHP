@@ -33,6 +33,7 @@ DROP DATABASE db_market;
 */
 /** @param Exemplo-02 em PHP: */
 $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
+
 try{
 
     if($conn == mysqli_connect_error() && mysqli_connect_ernno()):
@@ -43,7 +44,7 @@ try{
     endif;
 
 }catch (Exception $e){
-    echo 'Exceção Capturada', $e->getMessage() . $e->getLine(), "\n";
+    echo 'Exceção Capturada que mostra a linha e o Erro!', $e->getMessage() . $e->getLine(), "\n";
     
     
 }
