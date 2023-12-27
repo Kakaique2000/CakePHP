@@ -1,29 +1,52 @@
 <?php
 
-$conn = new PDO("mysql:local=localhost;dbname=dbphp7","root","");
-if(isset($conn)):
-    echo ucwords("<center> Conectado com sucesso!</center>");
+require_once './dao/estoque_dao.php';
+
+$dadosJson = file_get_contents('php://input'); # esta e a forma que vamos pegar o Json na requisição
+
+// Decodifica o JSON
+$dadosArray = json_decode($dadosJson, true);
+
+// Verifica se a decodificação foi bem-sucedida
+if ($dadosArray === null) {
+    // Se a decodificação falhou, retorna uma resposta de erro
+    http_response_code(400);
+    echo json_encode(["mensagem" => "Erro na decodificação do JSON."]);
+    exit();
+}
+// requi
+foreach($dadosJson as $value):
+    echo " " . $value . "\n";
+endforeach;
+exit();
 
 
-endif;
+// Cria uma instância da classe EstoqueDAO com os dados do JSON
+$estoqueDAO = new EstoqueDAO(
+    $dadosArray['id_prod'] ?? null,
+    $dadosArray['dt_cadastro'] ?? null,
+    $dadosArray['data_vencto'],
+    $dadosArray['marca'],
+    $dadosArray['fornecedor'],
+    $dadosArray['vlr_compra'],
+    $dadosArray['vlr_venda'],
+    $dadosArray['numero_nota_fiscal'],
+    $dadosArray['lucro_sobre_prod'],
+    $dadosArray['responsavel'] ?? null,
+    $dadosArray['supervisor'] ?? null,
+    $dadosArray['cnpj_ie'],
+    $dadosArray['razao_social'] ?? null
+);
 
-$stmt = $conn->prepare("INSERT INTO tb_usuarios (deslogin, dessenha) VALUES (:LOGIN, :PASSWORD)");
-// $stmt = $conn->prepare("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID");
-// $stmt = $conn->prepare("DELETE tb_usuarios WHERE idusuario = :ID");
-$login = 'joao';
-$senha = 'querty';
-$id = 2; // O id e igual a 02 no registro do banco;
-# id = 1;
-# vamos fazer um bindParam para cada um das variaveis;
-$stmt->bindParam(":LOGIN",$login);
-$stmt->bindParam(":PASSWORD",$senha);
-$stmt->bindParam(":ID",$id);
-# mantemos $stmt->bindParam(":ID", $id);
-$stmt->execute();
+try {
+    // Chama o método create para inserir no banco de dados
+    $estoqueDAO->create();
 
-echo "Inserido OK!!";
-// echo "Atualizado com sucesso!";
-// echo "Deletado com sucesso";
-//
-
+    // Retorna uma resposta de sucesso
+    echo json_encode(["mensagem" => "Registro de estoque criado com sucesso."]);
+} catch (Exception $e) {
+    // Se houver um erro, retorna uma resposta de erro
+    http_response_code(500);
+    echo json_encode(["mensagem" => $e->getMessage()]);
+}
 ?>

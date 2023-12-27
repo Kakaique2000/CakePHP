@@ -36,7 +36,7 @@ $conn = new PDO("mysql:local=localhost;dbname=db_market","root","");
 
 try{
 
-    if($conn == mysqli_connect_error() && mysqli_connect_ernno()):
+    if($conn == mysqli_connect_error() && mysqli_connect_ernno()): 
         return ucwords("Não foi Possivél conectar a base de Dados!") . mysql_connect_error();
     else:
         echo "<center> <b> Conectado com sucesso!</b> </center>";
@@ -47,7 +47,8 @@ try{
     echo 'Exceção Capturada que mostra a linha e o Erro!', $e->getMessage() . $e->getLine(), "\n";
     } 
 
-# $stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
+    
+$stmt = $conn->prepare("INSERT INTO estoque (marca, fornecedor) VALUES (:MARCA, :FORNECEDOR)");
 
 
 
