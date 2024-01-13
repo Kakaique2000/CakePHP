@@ -23,11 +23,11 @@ class Connection {
     }
 
     public function connect(): PDO {
-        $dsn = "mysql:host=$this->host;dbname=$this->db_name;charset=utf8mb4";
+        $dsn = "mysql:host=$this->hostname;dbname=$this->db_name;charset=utf8mb4";
         $pdo = new PDO(
             $dsn, 
-            $this->username,
-            $this->password
+            $this->user,
+            $this->pass
         );
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

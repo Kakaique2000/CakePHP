@@ -1,6 +1,6 @@
 <?php
 
-require_once '../configuration/connection_factory.php';
+require_once __DIR__.'/../configuration/connection_factory.php';
 
 abstract class BaseDAO {
     protected $conn;
@@ -15,6 +15,7 @@ abstract class BaseDAO {
     public abstract function update();
     public abstract function select();
 
+    public static abstract function fromJson($json);
 }
 
 

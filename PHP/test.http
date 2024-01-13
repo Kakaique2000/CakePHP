@@ -1,0 +1,15 @@
+POST http://localhost/exemplo-01.php
+
+{
+    "data_vencto": "2023-12-31",
+    "marca": "Marca Exemplo",
+    "fornecedor": "Fornecedor Exemplo",
+    "vlr_compra": 50.00,
+    "vlr_venda": 100.00,
+    "numero_nota_fiscal": "123456789",
+    "lucro_sobre_prod": 50.00,
+    "responsavel": "Responsavel Exemplo",
+    "supervisor": "Supervisor Exemplo",
+    "cnpj_ie": "12345678901234",
+    "razao_social": "Razao Social Exemplo"
+}

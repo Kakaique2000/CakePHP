@@ -14,29 +14,8 @@ if ($dadosArray === null) {
     echo json_encode(["mensagem" => "Erro na decodificação do JSON."]);
     exit();
 }
-// requi
-foreach($dadosJson as $value):
-    echo " " . $value . "\n";
-endforeach;
-exit();
-
-
 // Cria uma instância da classe EstoqueDAO com os dados do JSON
-$estoqueDAO = new EstoqueDAO(
-    $dadosArray['id_prod'] ?? null,
-    $dadosArray['dt_cadastro'] ?? null,
-    $dadosArray['data_vencto'],
-    $dadosArray['marca'],
-    $dadosArray['fornecedor'],
-    $dadosArray['vlr_compra'],
-    $dadosArray['vlr_venda'],
-    $dadosArray['numero_nota_fiscal'],
-    $dadosArray['lucro_sobre_prod'],
-    $dadosArray['responsavel'] ?? null,
-    $dadosArray['supervisor'] ?? null,
-    $dadosArray['cnpj_ie'],
-    $dadosArray['razao_social'] ?? null
-);
+$estoqueDAO = EstoqueDAO::fromJson($dadosArray);
 
 try {
     // Chama o método create para inserir no banco de dados

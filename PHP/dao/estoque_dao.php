@@ -55,16 +55,16 @@ class EstoqueDAO extends BaseDAO {
         $stmt = $this->conn->prepare(
             "INSERT INTO estoque (data_vencto, marca, fornecedor, vlr_compra_R$, vlr_venda_R$, N°_NF, lucro_sobre_prod, responsavél, supervisor, cnpj_ie, razão_social)
              VALUES(
-                :data_vencto
-                :marca
-                :fornecedor
-                :vlr_compra
-                :vlr_venda
-                :numero_nota_fiscal
-                :lucro_sobre_prod
-                :responsavel
-                :supervisor
-                :cnpj_ie
+                :data_vencto,
+                :marca,
+                :fornecedor,
+                :vlr_compra,
+                :vlr_venda,
+                :numero_nota_fiscal,
+                :lucro_sobre_prod,
+                :responsavel,
+                :supervisor,
+                :cnpj_ie,
                 :razao_social);
             ");
 
@@ -93,6 +93,24 @@ class EstoqueDAO extends BaseDAO {
     public function delete() {}
     public function update() {}
     public function select() {}
+
+    public static function fromJson(mixed $json) {
+        return new EstoqueDAO(
+            $json['id_prod'] ?? null,
+            $json['dt_cadastro'] ?? null,
+            $json['data_vencto'],
+            $json['marca'],
+            $json['fornecedor'],
+            $json['vlr_compra'],
+            $json['vlr_venda'],
+            $json['numero_nota_fiscal'],
+            $json['lucro_sobre_prod'],
+            $json['responsavel'] ?? null,
+            $json['supervisor'] ?? null,
+            $json['cnpj_ie'],
+            $json['razao_social'] ?? null
+        );
+    }
 
 }
 
